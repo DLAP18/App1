@@ -15,13 +15,18 @@ class MainActivity1 : AppCompatActivity() {
         val btnSaludo = findViewById<Button>(R.id.btnSaludo)
         val tvSaludo = findViewById<TextView>(R.id.tvSaludo)
 
-        val lambda: (View) -> Unit = { Log.d("LOGTAG", "Hola Mundo") }
+        //val lambda: (View) -> Unit = { Log.d("LOGTAG", "Hola Mundo") }
 
-        btnSaludo.setOnClickListener(lambda)
+        //btnSaludo.setOnClickListener(lambda)
 
-        //la version de arriba y esta funcionan igual
-        /*btnSaludo.setOnClickListener{
+        //la version de arriba y esta funcionan igual, diferencia en el uso de lamdas
+        btnSaludo.setOnClickListener{
             Log.d("LOGTAG", "Hola Mundo")
-        }*/
+            tvSaludo.text = "Holi mundo!"
+        }
+
+        tvSaludo.setOnClickListener {
+            tvSaludo.text = "Holi yo!"
+        }
     }
 }

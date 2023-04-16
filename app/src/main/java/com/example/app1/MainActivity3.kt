@@ -6,28 +6,22 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
-class MainActivity3 : AppCompatActivity(), View.OnClickListener{
+class MainActivity3 : AppCompatActivity(){
+    //private lateinit var -> promesa de inicializacion tardia
     private lateinit var tvSaludo: TextView
-    private lateinit var btnSaludo: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
 
-        btnSaludo = findViewById<Button>(R.id.btnSaludo)
         tvSaludo = findViewById<TextView>(R.id.tvSaludo)
-
-        tvSaludo.setOnClickListener(this)
     }
-
-    override fun onClick(v: View?){
-        when(v?.id){
-            R.id.btnSaludo -> {
-                tvSaludo.text = "Hola mundillo"
-            }
-
+    fun miClick(view: View) {
+        when(view.id){
             R.id.tvSaludo -> {
-                tvSaludo.text = "Hola yo"
+                tvSaludo.text = "Hola mundoo!"
+            }
+            R.id.btnSaludo -> {
+                tvSaludo.text = "Hello again yo!"
             }
         }
     }
